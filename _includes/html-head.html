@@ -1,6 +1,7 @@
 <head>
-    <meta charset="">
-    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- scripts -->
         <!-- FontAwesome -->
@@ -11,6 +12,16 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <!-- Theme Script -->
     <script defer type="text/javascript" src="{{ site.url }}/assets/js/main.js"></script>
+        <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
 
     <!-- preload fonts -->
     <!-- <link rel="preload" as="font" href="/wp-content/themes/nickdavidson/assets/fonts/brandon-grotesque/Brandon_reg.otf" type="font/otf" crossorigin="anonymous"> -->
@@ -20,10 +31,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css" type="text/css" media="screen">
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="author" href="{{ site.theme.link }}/humans.txt">
     <link rel="pingback" href="{{ site.pingback_url }}">
