@@ -1,3 +1,11 @@
-.hello {
-    font-size: 40px;
+body {
+    // font-family: $font-body;
+    font-size: 1.25rem;
+    // &.modal-open {
+    //     overflow-y: hidden;
+    // }
+}
+.skip-link.screen-reader-text {
+    position: absolute;
+    left: -1000vw;
 }

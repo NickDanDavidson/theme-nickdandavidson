@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+    // font-family: $font-header;
+    font-weight: 700;
+}
+ul, ol {
+    line-height: 1.75;
+    margin-bottom: 2rem;
+}
+ul {
+    list-style: square;
+}
+strong {
+    // font-family: $font-bold;
+}
+em {
+    // font-family: $font-italic;
+}
+hr {
+    margin-bottom: 2rem;
+}
+::selection, mark {
+    // background-color: $primary;
+    // color: $white;
+}

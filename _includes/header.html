@@ -1,0 +1,11 @@
+<header class="header">
+    <div class="wrapper">
+        <nav id="nav-main" class="nav-main container-fluid" role="navigation">
+            <ul class="nav-main__list row text-center justify-content-center mb-0 py-3 px-0">
+                {% for item in menu.get_items %}
+                    <li class="col-auto py-1 nav-main__list--item h5" data-nav-to="{{ loop.index0 }}"><span>{{ item.title }}</span></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>
