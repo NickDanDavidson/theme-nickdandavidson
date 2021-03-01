@@ -4,17 +4,16 @@
             <div class="col site-footer__copyright">
                 <div class="row align-contens-center justify-content-end">
                     <div class="col-auto">
-                        <p class="m-0">&copy; {{ "now"|date('Y') }}</p>
+                        <p class="m-0">&copy; </p>
                     </div>
                 </div>
             </div>
             <div class="col-auto site-footer__media">
                 <div class="row justify-content-center justify-content-md-end text-center text-md-right pr-5">
-                    {% for medium in options.social_media %}
-                        <div class="col-auto {% if loop.index0 == 0 %}pl-0 pl-md-4{% else %}pl-4{% endif %} pr-0">
-                            <a href="{{ medium.link }}" target="_blank" class="site-footer__media--button"><i class="fab fa-{{ medium.medium }}"></i></a>
+                    <!-- TODO: Iterate over media links -->
+                        <div class="col-auto pr-0">
+                            <a href="" target="_blank" class="site-footer__media--button"><i class="fab fa-"></i></a>
                         </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
