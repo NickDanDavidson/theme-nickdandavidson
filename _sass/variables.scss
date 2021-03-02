@@ -1,14 +1,48 @@
 // Fonts
-// @font-face {
-//     font-family: 'brandon-grotesque';
-//     src: url('/wp-content/themes/ndd-new/assets/fonts/brandon-grotesque/Brandon_reg.otf') format('opentype');
-//     font-display: swap;
-// }
+@font-face {
+    font-family: 'big-john';
+    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Regular.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'big-john-bold';
+    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Bold.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'slim-jim';
+    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Light.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HK-grotesk';
+    src: url('../assets/fonts/HK Grotesk/HKGrotesk-Regular.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HK-grotesk-bold';
+    src: url('../assets/fonts/HK Grotesk/HKGrotesk-Bold.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'sorts-mill-goudy';
+    src: url('../assets/fonts/Sorts Mill Goudy/SortsMillGoudy-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'sorts-mill-goudy-italic';
+    src: url('../assets/fonts/Sorts Mill Goudy/SortsMillGoudy-Italic.ttf') format('truetype');
+    font-display: swap;
+}
 
-// $font-header: 'league-spartan', sans-serif;
-// $font-body: 'brandon-grotesque', sans-serif;
-// $font-bold: 'BG-bold', sans-serif;
-// $font-italic: 'BG-italic', sans-serif;
+
+$font-large-header-thick: 'big-john-bold', sans-serif;
+$font-large-header-thin: 'slim-jim', sans-serif;
+$font-small-header: 'HK-grotesk-bold', sans-serif;
+$font-body-sans: 'HK-grotesk', sans-serif;
+$font-body-serif: 'sorts-mill-goudy', serif;
+$font-bold: 'HK-grotesk-bold', sans-serif;
+$font-italic: 'sorts-mill-goudy-italic', sans-serif;
 
 // Colors
 // Pantone Colors of the Year

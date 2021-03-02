@@ -1,6 +1,28 @@
-h1, h2, h3, h4, h5, h6 {
-    // font-family: $font-header;
-    font-weight: 700;
+h1, h2, h3 {
+    &.thick-header {
+        font-family: $font-large-header-thick;
+    }
+    &.thin-header {
+        font-family: $font-large-header-thin;
+    }
+}
+h4, h5, h6 {
+    font-family: $font-small-header;
+}
+p {
+    font-family: $font-body-serif;
+}
+.font-serif {
+    font-family: $font-body-serif;
+}
+.font-sans {
+    font-family: $font-body-sans;
+}
+strong {
+    font-family: $font-bold;
+}
+em {
+    font-family: $font-italic;
 }
 ul, ol {
     line-height: 1.75;
@@ -8,12 +30,6 @@ ul, ol {
 }
 ul {
     list-style: square;
-}
-strong {
-    // font-family: $font-bold;
-}
-em {
-    // font-family: $font-italic;
 }
 hr {
     margin-bottom: 2rem;
