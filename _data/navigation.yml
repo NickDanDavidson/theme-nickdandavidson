@@ -1,6 +1,9 @@
-- name: Home
-  link: /
-- name: About
-  link: /about
-- name: Colors
-  link: /pantone-colors
+items:
+  - name: Home
+    link: /
+  - name: About
+    link: /about
+  - name: Blog
+    link: /blog
+  - name: Colors
+    link: /pantone-colors
