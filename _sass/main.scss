@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    background-color: $beige;
     color: $black;
     font-family: $font-body-sans;
     font-size: 1.25rem;
@@ -26,4 +27,7 @@ main {
 }
 main, footer {
     flex-shrink: 0;
+}
+footer {
+    background-color: $beige;
 }
