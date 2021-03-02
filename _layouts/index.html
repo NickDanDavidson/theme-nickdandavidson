@@ -8,11 +8,14 @@ permalink: /
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-10 offset-md-2 mb-4 mt-5 pt-5">
-                <h1 class="display">Hi, I'm Nick –</h1>
-                <h3>Nurse / Musician / Developer.</h3>
+                <!-- <h1 class="display">Hi, I'm Nick –</h1>
+                <h3>Nurse / Musician / Developer</h3> -->
+                <h1 class="display">{{ page.display_text }}</h1>
+                <h3>{{ page.display_subtext }}</h3>
             </div>
-            <div class="col-12 col-md-8 offset-md-2"
-                <p>
+            <div class="col-12 col-md-8 offset-md-2">
+                {{ page.hero_description }}
+                <!-- <p>
                     I earned my Master of Music in French horn performance and played in professional orchestras and ensembles in Cleveland, OH. I taught myself to code and worked as a web developer for the awe-inspiring team at <a href="//whiteboard.is" target="_blank">Whiteboard</a>.
                 </p>
                 <p>
@@ -20,7 +23,7 @@ permalink: /
                 </p>
                 <p>
                     This site is just for fun to 1) have a digital landing pad and 2) play around with some ideas. Any questions, feel free to <a href="mailto:nick.dan.davidson@gmail.com" target="_blank">reach out</a>!
-                </p>
+                </p> -->
             </div>
         </div>
     </div>
