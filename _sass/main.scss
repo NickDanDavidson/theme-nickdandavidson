@@ -1,12 +1,29 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
 body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     color: $black;
     font-family: $font-body-sans;
     font-size: 1.25rem;
-    // &.modal-open {
-    //     overflow-y: hidden;
-    // }
 }
 .skip-link.screen-reader-text {
     position: absolute;
     left: -1000vw;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+main {
+    flex-grow: 1;
+}
+main, footer {
+    flex-shrink: 0;
 }
