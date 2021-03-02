@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-header;
 }
 p {
-    font-family: $font-body-serif;
+    font-family: $font-body-sans;
 }
 .font-serif {
     font-family: $font-body-serif;
@@ -27,6 +27,6 @@ hr {
     margin-bottom: 2rem;
 }
 ::selection, mark {
-    // background-color: $primary;
-    // color: $white;
+    background-color: $primary;
+    color: $white;
 }

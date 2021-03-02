@@ -1,19 +1,19 @@
 // Fonts
-@font-face {
-    font-family: 'big-john';
-    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Regular.otf') format('opentype');
-    font-display: swap;
-}
-@font-face {
-    font-family: 'big-john-bold';
-    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Bold.otf') format('opentype');
-    font-display: swap;
-}
-@font-face {
-    font-family: 'slim-jim';
-    src: url('/assets/fonts/Big John PRO/BigJohnPRO-Light.otf') format('opentype');
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'big-john';
+//     src: url('/assets/fonts/Big John PRO/BigJohnPRO-Regular.otf') format('opentype');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'big-john-bold';
+//     src: url('/assets/fonts/Big John PRO/BigJohnPRO-Bold.otf') format('opentype');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'slim-jim';
+//     src: url('/assets/fonts/Big John PRO/BigJohnPRO-Light.otf') format('opentype');
+//     font-display: swap;
+// }
 @font-face {
     font-family: 'HK-grotesk';
     src: url('/assets/fonts/HK Grotesk/HKGrotesk-Regular.otf') format('opentype');
@@ -22,6 +22,11 @@
 @font-face {
     font-family: 'HK-grotesk-black';
     src: url('/assets/fonts/HK Grotesk/HKGrotesk-Black.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'HK-grotesk-italic';
+    src: url('/assets/fonts/HK Grotesk/HKGrotesk-Italic.otf') format('opentype');
     font-display: swap;
 }
 @font-face {
@@ -42,7 +47,7 @@ $font-header: 'HK-grotesk-black', sans-serif;
 $font-body-sans: 'HK-grotesk', sans-serif;
 $font-body-serif: 'sorts-mill-goudy', serif;
 $font-bold: 'HK-grotesk-black', sans-serif;
-$font-italic: 'sorts-mill-goudy-italic', sans-serif;
+$font-italic: 'HK-grotesk-italic', sans-serif;
 
 // Colors
 // Pantone Colors of the Year
