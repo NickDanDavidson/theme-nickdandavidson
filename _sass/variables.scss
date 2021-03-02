@@ -20,8 +20,8 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'HK-grotesk-bold';
-    src: url('/assets/fonts/HK Grotesk/HKGrotesk-Bold.otf') format('opentype');
+    font-family: 'HK-grotesk-black';
+    src: url('/assets/fonts/HK Grotesk/HKGrotesk-Black.otf') format('opentype');
     font-display: swap;
 }
 @font-face {
@@ -36,12 +36,12 @@
 }
 
 
-$font-large-header-thick: 'big-john-bold', sans-serif;
-$font-large-header-thin: 'slim-jim', sans-serif;
-$font-small-header: 'HK-grotesk-bold', sans-serif;
+// $font-large-header-thick: 'big-john-bold', sans-serif;
+// $font-large-header-thin: 'slim-jim', sans-serif;
+$font-header: 'HK-grotesk-black', sans-serif;
 $font-body-sans: 'HK-grotesk', sans-serif;
 $font-body-serif: 'sorts-mill-goudy', serif;
-$font-bold: 'HK-grotesk-bold', sans-serif;
+$font-bold: 'HK-grotesk-black', sans-serif;
 $font-italic: 'sorts-mill-goudy-italic', sans-serif;
 
 // Colors
