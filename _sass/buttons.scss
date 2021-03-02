@@ -17,5 +17,8 @@ a {
     }
     &:hover {
         color: $gray;
+        &::after {
+            background-color: $gray;
+        }
     }
 }
