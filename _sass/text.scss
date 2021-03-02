@@ -1,14 +1,5 @@
-h1, h2, h3 {
-    font-family: $font-large-header-thick;
-    &.thick-header {
-        font-family: $font-large-header-thick;
-    }
-    &.thin-header {
-        font-family: $font-large-header-thin;
-    }
-}
-h4, h5, h6 {
-    font-family: $font-small-header;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-header;
 }
 p {
     font-family: $font-body-serif;
