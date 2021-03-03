@@ -1,6 +1,6 @@
 .nav {
     position: absolute;
-    top: 3rem;
+    top: 6rem;
     left: 4rem;
     pointer-events: none;
     opacity: 0;
@@ -13,16 +13,20 @@
     }
     &__toggle {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 2rem;
+        left: 2rem;
         width: 2rem;
         height: 2rem;
-        transform: rotate(45deg);
+        // transform: rotate(45deg);
         background-color: transparent;
         border: 3px solid $black;
+        cursor: pointer;
         transition: 0.2s;
         &:hover, &.nav-open {
             background-color: $black;
         }
+    }
+    &__list {
+        list-style: none;
     }
 }
