@@ -1,11 +1,23 @@
 <header class="header">
-    <div class="wrapper">
-        <nav id="nav-main" class="nav-main container-fluid" role="navigation">
-            <ul class="nav-main__list row text-center justify-content-center mb-0 py-3 px-0">
-                {% for item in menu.get_items %}
-                    <li class="col-auto py-1 nav-main__list--item h5" data-nav-to="{{ loop.index0 }}"><span>{{ item.title }}</span></li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
+    <nav class="nav container"
+        <ul class="nav__list row text-center justify-content-center">
+            <!-- {% for item in site.navigation.items %}
+                <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+                    <a href="{{ item.permalink }}"><h6>{{ item.name }}</h6></a>
+                </li>
+            {% endfor %} -->
+            <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+                <a href="/"><h6>Home</h6></a>
+            </li>
+            <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+                <a href="/about"><h6>CV</h6></a>
+            </li>
+            <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+                <a href="/blog"><h6>Ramblings</h6></a>
+            </li>
+            <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+                <a href="/pantone-colors"><h6>Pantone Colors</h6></a>
+            </li>
+        </ul>
+    </nav>
 </header>
