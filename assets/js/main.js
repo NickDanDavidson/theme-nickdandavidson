@@ -9,13 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     return true;
                 },
                 run() {
-                    // global vars
-                    const nav = $(".nav-main__list"),
-                          navLinks = $(".nav-main__list--item"),
-                          body = $("body"),
-                          contentWrapper = $(".content-wrapper");
+                    const body = $("body"),
+                          nav = $(".nav"),
+                          navLinks = $(".nav__list--item"),
+                          navToggle = $(".nav__toggle");
 
-                    // setupNav();
+                    function setupNav() {
+                        navToggle.on("click", function toggleNav() {
+                            navToggle.toggleClass("nav-open");
+                            nav.toggleClass("nav-open");
+                        });
+                    }
+
+                    setupNav();
                 }
             }
         };
