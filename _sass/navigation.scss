@@ -28,5 +28,18 @@
     }
     &__list {
         list-style: none;
+        &--item {
+            margin: 0.25rem 0;
+            a {
+                &::after {
+                    opacity: 0;
+                }
+                &:hover, &.current-page {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
 }
