@@ -3,3 +3,21 @@ layout: default
 title: Pantone Colors of the Year
 permalink: /pantone-colors
 ---
+
+<section class="pantone__color">
+    <div class="container">
+        <div class="row">
+            <h1>{{ page.title }}</h1>
+            <h2>{{ page.subtitle }}</h2>
+            <p>{{ page.copy }}</p>
+        </div>
+    </div>
+</section>
+
+{% for color in site.pantone_colors %}
+    {% capture color_title=color.name %}{% endcapture %}
+    {% capture color_hex=color.hex_code %}{% endcapture %}
+    {% capture color_year=color.year %}{% endcapture %}
+
+    {% include single-pantone-color.html title=color_title hex=color_hex year=color_year %}
+{% endfor %}
