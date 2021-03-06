@@ -31,3 +31,8 @@ main, footer {
 footer {
     background-color: $beige;
 }
+.pantone {
+    &__hero, &__color {
+        height: 100vh;
+    }
+}
