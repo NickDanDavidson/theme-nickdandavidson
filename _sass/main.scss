@@ -36,4 +36,12 @@ footer {
     &__hero, &__color {
         height: 100vh;
     }
+    &__stack {
+        position: relative;
+    }
+    &__color {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }

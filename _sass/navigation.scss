@@ -27,6 +27,11 @@
     }
     &__list {
         list-style: none;
+        padding: 0;
+        margin-left: 2rem;
+        .nav-open & {
+            background-color: $beige;
+        }
         &--item {
             margin: 0.25rem 0;
             a {
