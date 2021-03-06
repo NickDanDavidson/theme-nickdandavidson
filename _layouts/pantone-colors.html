@@ -7,9 +7,11 @@ permalink: /pantone-colors
 <section class="pantone__color">
     <div class="container">
         <div class="row">
-            <h1>{{ page.title }}</h1>
-            <h2>{{ page.subtitle }}</h2>
-            <p>{{ page.copy }}</p>
+            <div class="col-12 col-md-8">
+                <h1>{{ page.title }}</h1>
+                <h4>{{ page.subtitle }}</h4>
+                <p class="mt-3">{{ page.copy }}</p>
+            </div>
         </div>
     </div>
 </section>
@@ -18,8 +20,6 @@ permalink: /pantone-colors
     {% capture color_title %}{{ color.title }}{% endcapture %}
     {% capture color_hex %}{{ color.hex_code }}{% endcapture %}
     {% capture color_year %}{{ color.year }}{% endcapture %}
-
-    <h1>{{ color_title }} {{ color_hex }} {{ color_year }}</h1>
 
     {% include single-pantone-color.html title=color_title hex=color_hex year=color_year %}
 {% endfor %}
