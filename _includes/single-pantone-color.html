@@ -1,9 +1,10 @@
-<section class="pantone__color">
+<section class="pantone__color" style="background-color: {{ include.hex }}">
     <div class="container">
-        <div class="row">
-            <h1>{{ include.title }}</h1>
-            <h2>{{ include.year }}</h2>
-            <h3>{{ include.hex }}</h3>
+        <div class="row pt-5">
+            <div class="col-12 col-md-8 pt-5 mt-5">
+                <h1>{{ include.title }} – {{ include.year }}</h1>
+                <p>{{ include.description }}</p>
+            </div>
         </div>
     </div>
 </section>
