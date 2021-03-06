@@ -14,8 +14,10 @@ permalink: /pantone-colors
     </div>
 </section>
 
-<p>{{ site.pantone-colors }}</p>
-<p>{{ site.collections }}</p>
-{% for color in site.pantone-colors %}
+{% for color in site.data.pantone_colors %}
+    {% capture color_title=color.name %}{% endcapture %}
+    {% capture color_hex=color.hex_code %}{% endcapture %}
+    {% capture color_year=color.year %}{% endcapture %}
 
+    {% include single-pantone-color.html title=color_title hex=color_hex year=color_year %}
 {% endfor %}
