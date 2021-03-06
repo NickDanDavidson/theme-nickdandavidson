@@ -1,15 +1,15 @@
 .nav {
     position: absolute;
-    top: 6rem;
+    top: 2rem;
     left: 4rem;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(0.5rem);
+    transform: translateX(0.5rem);
     transition: 0.2s;
     &.nav-open {
         pointer-events: all;
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
     &__toggle {
         position: absolute;
