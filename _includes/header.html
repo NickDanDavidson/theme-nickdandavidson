@@ -2,7 +2,7 @@
     <div class="nav__toggle"></div>
     <nav class="nav container">
         <ul class="nav__list row justify-content-center">
-            {% for item in site.navigation.items %}
+            {% for item in site.data.navigation.items %}
                 <li class="nav__list--item col-12" data-nav-to="{{ forloop.index0 }}">
                     <a href="{{ item.link }}"><h5 class="mb-0">{{ item.name }}</h5></a>
                 </li>
