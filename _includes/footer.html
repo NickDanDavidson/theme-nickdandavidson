@@ -4,7 +4,7 @@
             <div class="col site-footer__copyright">
                 <div class="row align-contens-center justify-content-end">
                     <div class="col-auto">
-                        <p class="m-0">&copy; {{ "now" }}</p>
+                        <p class="m-0">&copy; {{ now }}</p>
                     </div>
                 </div>
             </div>
@@ -12,7 +12,7 @@
                 <div class="row justify-content-center justify-content-md-end text-center text-md-right pr-5">
                     {% for item in site.data.social_media.items %}
                         <div class="col-auto pr-0">
-                            <a href="{{ item.link }}" target="_blank" class="site-footer__media--button"><i class="fab fa-{{ item.fa-icon }}"></i></a>
+                            <a href="{{ item.link }}" target="_blank" class="site-footer__media--button"><i class="fab {{ item.fa-icon }}"></i></a>
                         </div>
                     {% endfor %}
                 </div>
