@@ -21,7 +21,7 @@ permalink: /pantone-colors
         {% capture color_title %}{{ color.title }}{% endcapture %}
         {% capture color_hex %}{{ color.hex_code }}{% endcapture %}
         {% capture color_year %}{{ color.year }}{% endcapture %}
-        {% capture loop_index %}{{ num_colors minus: forloop.index0 }}{% endcapture %}
+        {% capture loop_index %}{{ num_colors | minus: forloop.index0 }}{% endcapture %}
 
         {% include single-pantone-color.html title=color_title hex=color_hex year=color_year index=loop_index %}
     {% endfor %}
