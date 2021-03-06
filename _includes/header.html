@@ -2,12 +2,12 @@
     <div class="nav__toggle"></div>
     <nav class="nav container">
         <ul class="nav__list row justify-content-center">
-            <!-- {% for item in site.navigation.items %}
+            {% for item in site.navigation.items %}
                 <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
-                    <a href="{{ item.permalink }}"><h6>{{ item.name }}</h6></a>
+                    <a href="{{ item.permalink }}"><h5 class="mb-0">{{ item.name }}</h5></a>
                 </li>
-            {% endfor %} -->
-            <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
+            {% endfor %}
+            <!-- <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
                 <a href="/"><h5 class="mb-0">Home</h5></a>
             </li>
             <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
@@ -18,7 +18,7 @@
             </li>
             <li class="nav__list--item col-12" data-nav-to="{{ loop.index0 }}">
                 <a href="/pantone-colors"><h5 class="mb-0">Pantone Colors</h5></a>
-            </li>
+            </li> -->
         </ul>
     </nav>
 </header>
