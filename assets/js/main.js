@@ -57,6 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                         userIsWheeling = false;
                                     }, 60);
                                 };
+
+                                $(window).on("keydown", function watchArrows(e) {
+                                    if (e.which === 40) {
+                                        $(".current-color").removeClass("current-color").addClass("color-before");
+                                        $(".color-before").last().next().addClass("current-color");
+                                    }
+                                    if (e.which === 38) {
+                                        $(".current-color").prev().removeClass("color-before").addClass("current-color");
+                                        $(".current-color").first().next().removeClass("current-color");
+                                    }
+                                });
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
                             //     colorStack.removeClass("fixed-position");
