@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color");
 
-                    let _scrollTimeout = null;
+                    let _scrollTimeout = null,
+                        userIsWheeling = false;
 
                     function setupNav() {
                         navToggle.on("click", function toggleNav() {
@@ -35,14 +36,26 @@ document.addEventListener('DOMContentLoaded', function() {
                                 colorStack.addClass("fixed-position");
 
                                 window.onwheel = function watchWheel(e) {
-                                    let d = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
-                                    // d = 100 * ((d>0)?1:-1);
+                                    let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
 
-                                    console.log("Scroll delta", d);
+                                    if (!userIsWheeling) {
+                                        userIsWheeling = true;
+                                        if (delta < 0) {
+                                            $(".current-color").next().addClass("current-color");
+                                            $(".current-color").removeClass("current-color").addClass("color-before");
+                                        }
+                                        if (delta > 0) {
+                                            $(".current-color").prev().removeClass("color-before").addClass("current-color");
+                                            $(".current-color").removeClass("current-color");
+                                        }
+                                    }
+
+                                    console.log("Scroll delta", delta);
 
                                     clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
-                                        console.log("Haven't scrolled in 250ms");
+                                        // console.log("Haven't scrolled in 250ms");
+                                        userIsWheeling = false;
                                     }, 250);
                                 };
                             }
