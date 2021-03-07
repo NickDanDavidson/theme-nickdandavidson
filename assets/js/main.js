@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
                           colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color");
-                          console.log(stackPosition);
 
                     function setupNav() {
                         navToggle.on("click", function toggleNav() {
@@ -31,11 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
                                 colorStack.addClass("fixed-position");
-                                console.log("ADDED");
                             }
                             if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
                                 colorStack.removeClass("fixed-position");
-                                console.log("REMOVED");
                             }
                         });
                     }
