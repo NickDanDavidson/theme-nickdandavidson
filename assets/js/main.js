@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
                                 colorStack.addClass("fixed-position");
                             }
-                            if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
-                                colorStack.removeClass("fixed-position");
-                            }
+                            // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
+                            //     colorStack.removeClass("fixed-position");
+                            // }
                         });
                     }
 
