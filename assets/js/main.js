@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
                                         userIsWheeling = false;
-                                    }, 5);
+                                    }, 60);
                                 };
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
