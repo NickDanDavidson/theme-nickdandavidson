@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return true;
                 },
                 run() {
-                    const $window = $("window"),
-                          body = $("body"),
+                    const body = $("body"),
                           nav = $(".nav"),
                           navLinks = $(".nav__list--item"),
                           navToggle = $(".nav__toggle"),
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
 
                     function handleColorStack() {
-                        $window.on("scroll", function watchScroll() {
+                        $(window).on("scroll", function watchScroll() {
                             let scrollPos = window.scrollY;
                             console.log(scrollPos);
 
