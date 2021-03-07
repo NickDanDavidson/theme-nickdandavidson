@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 body.addClass("overflow-hidden");
                                 colorStack.addClass("fixed-position");
 
-                                window.onwheel = function watchWheel() {
+                                window.onwheel = function watchWheel(e) {
                                     let d = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
                                     // d = 100 * ((d>0)?1:-1);
 
