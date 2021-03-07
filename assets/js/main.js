@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
                           navToggle = $(".nav__toggle"),
                           colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
-                          pantoneColors = $(".pantone__color"),
-                          _scrollTimeout = null;
+                          pantoneColors = $(".pantone__color");
+
+                    let _scrollTimeout = null;
 
                     function setupNav() {
                         navToggle.on("click", function toggleNav() {
