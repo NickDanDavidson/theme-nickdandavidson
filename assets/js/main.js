@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             let scrollPos = window.scrollY;
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
+                                body.addClass("overflow-hidden");
                                 colorStack.addClass("fixed-position");
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
