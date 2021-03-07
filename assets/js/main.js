@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                     if (!userIsWheeling) {
                                         userIsWheeling = true;
                                         if (delta < 0) {
-                                            $(".current-color").next().addClass("current-color");
                                             $(".current-color").removeClass("current-color").addClass("color-before");
+                                            $(".current-color").next().addClass("current-color");
                                         }
                                         if (delta > 0) {
                                             $(".current-color").prev().removeClass("color-before").addClass("current-color");
