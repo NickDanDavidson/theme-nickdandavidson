@@ -1,4 +1,4 @@
-<article class="pantone__color {% if forloop.index0 = 0 %}current-color{% endif %}" style="background-color: {{ include.hex }}; z-index: {{ include.index }};">
+<article class="pantone__color {% if include.index = 0 %}current-color{% endif %}" style="background-color: {{ include.hex }}; z-index: {{ include.num_colors | minus: include.index }};">
     <div class="container">
         <div class="row pt-5">
             <div class="col-12 col-md-8 pt-5 mt-5">
