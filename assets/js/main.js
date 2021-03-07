@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                     _scrollTimeout = setTimeout(function() {
                                         userIsWheeling = false;
                                     }, 60);
+
+                                    return false;
                                 };
 
                                 $(window).on("keydown", function watchArrows(e) {
