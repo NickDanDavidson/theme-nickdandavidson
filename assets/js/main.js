@@ -52,6 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     console.log("Scroll delta", delta);
 
+                                    if (Math.abs(delta) > 1) {
+                                        e.preventDefault();
+                                    }
+
                                     clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
                                         userIsWheeling = false;
