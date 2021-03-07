@@ -52,12 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     console.log("Scroll delta", delta);
 
-                                    if (Math.abs(delta) > 5) {
-                                        clearTimeout(_scrollTimeout);
-                                    }
+                                    clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
                                         userIsWheeling = false;
-                                    }, 250);
+                                    }, 5);
                                 };
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
