@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     _scrollTimeout = setTimeout(function() {
                                         console.log("Haven't scrolled in 250ms");
                                     }, 250);
-                                });
+                                };
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
                             //     colorStack.removeClass("fixed-position");
