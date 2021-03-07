@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                         userIsWheeling = true;
                                         if (delta < 0) {
                                             $(".current-color").removeClass("current-color").addClass("color-before");
-                                            $(".current-color").next().addClass("current-color");
+                                            $(".color-before").last().next().addClass("current-color");
                                         }
                                         if (delta > 0) {
                                             $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                            $(".current-color").removeClass("current-color");
+                                            $(".current-color").last().next().removeClass("current-color");
                                         }
                                     }
 
