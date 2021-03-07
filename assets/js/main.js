@@ -38,33 +38,26 @@ document.addEventListener('DOMContentLoaded', function() {
                                 window.onwheel = function watchWheel(e) {
                                     let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
 
-                                    if (delta < 0) {
-                                        $(".current-color").removeClass("current-color").addClass("color-before");
-                                        $(".color-before").last().next().addClass("current-color");
+                                    if (!userIsWheeling) {
+                                        userIsWheeling = true;
+                                        if (delta < 0) {
+                                            $(".current-color").removeClass("current-color").addClass("color-before");
+                                            $(".color-before").last().next().addClass("current-color");
+                                        }
+                                        if (delta > 0) {
+                                            $(".current-color").prev().removeClass("color-before").addClass("current-color");
+                                            $(".current-color").first().next().removeClass("current-color");
+                                        }
                                     }
-                                    if (delta > 0) {
-                                        $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                        $(".current-color").first().next().removeClass("current-color");
-                                    }
-
-                                    // if (!userIsWheeling) {
-                                    //     userIsWheeling = true;
-                                    //     if (delta < 0) {
-                                    //         $(".current-color").removeClass("current-color").addClass("color-before");
-                                    //         $(".color-before").last().next().addClass("current-color");
-                                    //     }
-                                    //     if (delta > 0) {
-                                    //         $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                    //         $(".current-color").first().next().removeClass("current-color");
-                                    //     }
-                                    // }
 
                                     console.log("Scroll delta", delta);
 
-                                    // clearTimeout(_scrollTimeout);
-                                    // _scrollTimeout = setTimeout(function() {
-                                    //     userIsWheeling = false;
-                                    // }, 100);
+                                    if (Math.abs(delta) > 5) {
+                                        clearTimeout(_scrollTimeout);
+                                    }
+                                    _scrollTimeout = setTimeout(function() {
+                                        userIsWheeling = false;
+                                    }, 250);
                                 };
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
