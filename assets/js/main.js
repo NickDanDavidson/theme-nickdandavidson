@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     _scrollTimeout = setTimeout(function() {
                                         // console.log("Haven't scrolled in 250ms");
                                         userIsWheeling = false;
-                                    }, 250);
+                                    }, 100);
                                 };
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
