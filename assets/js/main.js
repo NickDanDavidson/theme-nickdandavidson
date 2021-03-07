@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           navLinks = $(".nav__list--item"),
                           navToggle = $(".nav__toggle"),
                           colorStack = $(".pantone__stack"),
-                          stackPosition = colorStack.offset(),
+                          stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color");
                           console.log(stackPosition);
 
