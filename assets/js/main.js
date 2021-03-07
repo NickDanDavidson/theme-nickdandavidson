@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         }
                                         if (delta > 0) {
                                             $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                            $(".current-color").last().next().removeClass("current-color");
+                                            $(".current-color").first().next().removeClass("current-color");
                                         }
                                     }
 
