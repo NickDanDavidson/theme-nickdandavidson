@@ -31,6 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
                                 body.addClass("overflow-hidden");
                                 colorStack.addClass("fixed-position");
+
+                                window.onwheel = function watchWheel() {
+                                    let d = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
+                                    // d = 100 * ((d>0)?1:-1);
+
+                                    console.log("Scroll delta", d);
+
+                                    clearTimeout(_scrollTimeout);
+                                    _scrollTimeout = setTimeout(function() {
+                                        console.log("Haven't scrolled in 250ms");
+                                    }, 250);
+                                });
                             }
                             // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
                             //     colorStack.removeClass("fixed-position");

@@ -53,10 +53,11 @@ footer {
         top: 0;
         left: 0;
         width: 100%;
-        transition: 0.4s;
+        transition: transform 0.4s, opacity 0.2s;
         &.current-color {
             transform: translateY(0);
             opacity: 1;
+            transition: transform 0.4s, opacity 0.2s 0.2s;
         }
         &.color-before {
             transform: translateY(-100%);
