@@ -58,7 +58,12 @@ footer {
             transform: translateX(0) translateY(0);
         }
         &.color-before {
-            transform: translateX(-100%) translateY(-100%);
+            &.modulo-0 {
+                transform: translateX(-100%) translateY(-100%);
+            }
+            &.modulo-1 {
+                transform: translateX(100%) translateY(-100%);
+            }
         }
     }
 }

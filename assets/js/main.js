@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
                           navToggle = $(".nav__toggle"),
                           colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
-                          pantoneColors = $(".pantone__color");
+                          pantoneColors = $(".pantone__color"),
+                          lastColor = pantoneColors.last();
 
                     let _scrollTimeout = null,
                         userIsWheeling = false;
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     if (!userIsWheeling) {
                                         userIsWheeling = true;
-                                        if (delta < 0) {
+                                        if (delta < 0 && $(".current-color") != lastColor) {
                                             $(".current-color").removeClass("current-color").addClass("color-before");
                                             $(".color-before").last().next().addClass("current-color");
                                         }
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
                                         userIsWheeling = false;
-                                    }, 60);
+                                    }, 66);
                                 };
 
                                 $(window).on("keydown", function watchArrows(e) {
