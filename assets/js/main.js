@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color"),
-                          lastColor = pantoneColors.last();
+                          lastColor = pantoneColors.last().find("h1").text();
 
                     let _scrollTimeout = null,
                         userIsWheeling = false;
@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     if (!userIsWheeling) {
                                         userIsWheeling = true;
-                                        if (delta < 0 && $(".current-color") != lastColor) {
+                                        let currentColor = $(".current-color").find("h1").text();
+                                        if (delta < 0 && currentColor !== lastColor) {
                                             $(".current-color").removeClass("current-color").addClass("color-before");
                                             $(".color-before").last().next().addClass("current-color");
                                         }
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         }
                                     }
 
-                                    console.log("Scroll delta", delta);
+                                    // console.log("Scroll delta", delta);
 
                                     clearTimeout(_scrollTimeout);
                                     _scrollTimeout = setTimeout(function() {
