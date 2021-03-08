@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return $(".pantone__stack");
                 },
                 run() {
-                    const colorStack = isColorPage ? $(".pantone__stack") : ,
+                    const colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color"),
                           lastColor = pantoneColors.last().find("h1").text();
