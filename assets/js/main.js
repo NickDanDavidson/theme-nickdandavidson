@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     if (!userIsWheeling) {
                                         userIsWheeling = true;
                                         let currentColor = $(".current-color").find("h1").text();
+
                                         if (delta < 0 && currentColor !== lastColor) {
                                             $(".current-color").removeClass("current-color").addClass("color-before");
                                             $(".color-before").last().next().addClass("current-color");
@@ -61,7 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 };
 
                                 $(window).on("keydown", function watchArrows(e) {
-                                    if (e.which === 40) {
+                                    let currentColor = $(".current-color").find("h1").text();
+
+                                    if (e.which === 40 && currentColor !== lastColor) {
                                         $(".current-color").removeClass("current-color").addClass("color-before");
                                         $(".color-before").last().next().addClass("current-color");
                                     }
