@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "use strict";
 
         const siteMainScript = {
-            navToggle: {
+            handleNav: {
                 test() {
                     return true;
                 },
@@ -12,14 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const body = $("body"),
                           nav = $(".nav"),
                           navLinks = $(".nav__list--item"),
-                          navToggle = $(".nav__toggle"),
-                          colorStack = $(".pantone__stack"),
-                          stackPosition = colorStack.offset().top,
-                          pantoneColors = $(".pantone__color"),
-                          lastColor = pantoneColors.last().find("h1").text();
-
-                    let _scrollTimeout = null,
-                        userIsWheeling = false;
+                          navToggle = $(".nav__toggle");
 
                     function setupNav() {
                         navToggle.on("click", function toggleNav() {
@@ -27,6 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
                             nav.toggleClass("nav-open");
                         });
                     }
+
+                    setupNav();
+                }
+            },
+            pantonePage: {
+                test() {
+                    return $(".pantone__stack");
+                },
+                run() {
+                    const colorStack = isColorPage ? $(".pantone__stack") : ,
+                          stackPosition = colorStack.offset().top,
+                          pantoneColors = $(".pantone__color"),
+                          lastColor = pantoneColors.last().find("h1").text();
+
+                    let _scrollTimeout = null,
+                        userIsWheeling = false;
 
                     function handleColorStack() {
                         $(window).on("scroll", function watchScroll() {
@@ -80,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                     }
 
-                    setupNav();
                     handleColorStack();
                 }
             }
