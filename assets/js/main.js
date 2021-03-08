@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             pantonePage: {
                 test() {
-                    return $(".pantone__stack");
+                    return $(".pantone__stack").length;
                 },
                 run() {
                     const colorStack = $(".pantone__stack"),
