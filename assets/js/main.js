@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     (function($, window) {
         "use strict";
 
+        const body = $("body"),
+              nav = $(".nav"),
+              navLinks = $(".nav__list--item"),
+              navToggle = $(".nav__toggle");
+
         const siteMainScript = {
             handleNav: {
                 test() {
                     return true;
                 },
                 run() {
-                    const body = $("body"),
-                          nav = $(".nav"),
-                          navLinks = $(".nav__list--item"),
-                          navToggle = $(".nav__toggle");
-
                     function setupNav() {
                         navToggle.on("click", function toggleNav() {
                             navToggle.toggleClass("nav-open");
