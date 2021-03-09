@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const colorStack = $(".pantone__stack"),
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color"),
+                          firstColor = pantoneColors.first().find("h1").text(),
                           lastColor = pantoneColors.last().find("h1").text();
 
                     let _scrollTimeout = null,
@@ -52,20 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
                                         userIsWheeling = true;
                                         let currentColor = $(".current-color").find("h1").text();
 
+                                        if (delta > 0 && currentColor == firstColor) {
+                                            // Swipe back to hero
+                                            colorStack.removeClass("fixed-position");
+                                            body.removeClass("overflow-hidden");
+                                            $(window).off("scroll");
+                                        }
                                         if (delta < 0 && currentColor !== lastColor) {
+                                            // Swipe to next color
                                             $(".current-color").removeClass("current-color").addClass("color-before");
                                             $(".color-before").last().next().addClass("current-color");
                                         }
                                         if (delta > 0) {
+                                            // Swipe to previous color
                                             $(".current-color").prev().removeClass("color-before").addClass("current-color");
                                             $(".current-color").first().next().removeClass("current-color");
                                         }
                                     }
 
-                                    // console.log("Scroll delta", delta);
-
                                     clearTimeout(_scrollTimeout);
-                                    _scrollTimeout = setTimeout(function() {
+                                    _scrollTimeout = setTimeout(function setWheelingStatus() {
                                         userIsWheeling = false;
                                     }, 66);
                                 };
@@ -73,11 +80,19 @@ document.addEventListener('DOMContentLoaded', function() {
                                 $(window).on("keydown", function watchArrows(e) {
                                     let currentColor = $(".current-color").find("h1").text();
 
+                                    if (e.which === 38 && currentColor == firstColor) {
+                                        // Swipe back to hero
+                                        colorStack.removeClass("fixed-position");
+                                        body.removeClass("overflow-hidden");
+                                        $(window).off("scroll");
+                                    }
                                     if (e.which === 40 && currentColor !== lastColor) {
+                                        // Swipe to next color
                                         $(".current-color").removeClass("current-color").addClass("color-before");
                                         $(".color-before").last().next().addClass("current-color");
                                     }
                                     if (e.which === 38) {
+                                        // Swipe to previous color
                                         $(".current-color").prev().removeClass("color-before").addClass("current-color");
                                         $(".current-color").first().next().removeClass("current-color");
                                     }
