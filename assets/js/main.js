@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             // Swipe back to hero
                                             body.removeClass("overflow-hidden");
                                             $(window).off("scroll");
-                                            window.removeEventListener("wheel");
+                                            window.removeEventListener("wheel", watchWheel);
                                             $(window).off("keydown");
                                             colorStack.removeClass("fixed-position");
                                         }
