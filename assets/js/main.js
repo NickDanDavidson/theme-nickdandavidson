@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             // $(window).off("scroll");
                                             window.removeEventListener("wheel", watchWheel);
                                             // $(window).off("keydown");
-                                            // colorStack.removeClass("fixed-position");
+                                            colorStack.removeClass("fixed-position");
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
                                             // Swipe to next color
