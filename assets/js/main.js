@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             // Swipe back to hero
                                             body.removeClass("overflow-hidden");
                                             window.removeEventListener("wheel", watchWheel);
+                                            $(window).off("keydown");
                                             colorStack.removeClass("fixed-position");
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
@@ -86,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         // Swipe back to hero
                                         body.removeClass("overflow-hidden");
                                         window.removeEventListener("wheel", watchWheel);
+                                        $(window).off("keydown");
                                         colorStack.removeClass("fixed-position");
                                     }
                                     if (e.which === 40 && currentColor !== lastColor) {
@@ -100,9 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                     }
                                 });
                             }
-                            // if (scrollPos < stackPosition && colorStack.hasClass("fixed-position")) {
-                            //     colorStack.removeClass("fixed-position");
-                            // }
                         });
                     }
 
