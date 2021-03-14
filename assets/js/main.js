@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                         if (delta > 0 && currentColor == firstColor) {
                                             // Swipe back to hero
                                             body.removeClass("overflow-hidden");
-                                            $(window).off("scroll");
+                                            // $(window).off("scroll");
                                             window.removeEventListener("wheel", watchWheel);
-                                            $(window).off("keydown");
-                                            colorStack.removeClass("fixed-position");
+                                            // $(window).off("keydown");
+                                            // colorStack.removeClass("fixed-position");
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
                                             // Swipe to next color
