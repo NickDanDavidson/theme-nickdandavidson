@@ -56,9 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         if (delta > 0 && currentColor == firstColor) {
                                             // Swipe back to hero
                                             body.removeClass("overflow-hidden");
-                                            // $(window).off("scroll");
                                             window.removeEventListener("wheel", watchWheel);
-                                            // $(window).off("keydown");
                                             colorStack.removeClass("fixed-position");
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
@@ -86,11 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     if (e.which === 38 && currentColor == firstColor) {
                                         // Swipe back to hero
-                                        colorStack.removeClass("fixed-position");
                                         body.removeClass("overflow-hidden");
-                                        $(window).off("scroll");
-                                        window.removeEventListener("onwheel", watchWheel);
-                                        $(window).off("keydown", watchArrows);
+                                        window.removeEventListener("wheel", watchWheel);
+                                        colorStack.removeClass("fixed-position");
                                     }
                                     if (e.which === 40 && currentColor !== lastColor) {
                                         // Swipe to next color
