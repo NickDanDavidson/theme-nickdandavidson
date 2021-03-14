@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 body.addClass("overflow-hidden");
                                 colorStack.addClass("fixed-position");
 
-                                window.onwheel = function watchWheel(e) {
+                                function watchWheel(e) {
                                     let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
 
                                     if (!userIsWheeling) {
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                         if (delta > 0 && currentColor == firstColor) {
                                             // Swipe back to hero
-                                            colorStack.removeClass("fixed-position");
                                             body.removeClass("overflow-hidden");
-                                            $(window).off("scroll", watchScroll);
-                                            window.removeEventListener("onwheel", watchWheel);
-                                            $(window).off("keydown", watchArrows);
+                                            $(window).off("scroll");
+                                            window.removeEventListener("wheel");
+                                            $(window).off("keydown");
+                                            colorStack.removeClass("fixed-position");
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
                                             // Swipe to next color
@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                         userIsWheeling = false;
                                     }, 66);
                                 };
+
+                                window.addEventListener("wheel", watchWheel);
 
                                 $(window).on("keydown", function watchArrows(e) {
                                     let currentColor = $(".current-color").find("h1").text();
