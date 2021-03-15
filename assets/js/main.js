@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
                                 body.addClass("overflow-hidden");
-                                window.scrollTop(stackPosition);
+                                $(window).scrollTop(stackPosition);
                                 // colorStack.addClass("fixed-position");
 
                                 function watchWheel(e) {
