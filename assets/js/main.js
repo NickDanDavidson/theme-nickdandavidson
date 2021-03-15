@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             window.removeEventListener("wheel", watchWheel);
                                             $(window).off("keydown");
                                             colorStack.removeClass("fixed-position");
-                                            $(window).scrollTop(stackPosition - 1);
+                                            $(window).scrollTop(stackPosition - 50);
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
                                             // Swipe to next color
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         window.removeEventListener("wheel", watchWheel);
                                         $(window).off("keydown");
                                         colorStack.removeClass("fixed-position");
-                                        $(window).scrollTop(stackPosition - 1);
+                                        $(window).scrollTop(stackPosition - 50);
                                     }
                                     if (e.which === 40 && currentColor !== lastColor) {
                                         // Swipe to next color
