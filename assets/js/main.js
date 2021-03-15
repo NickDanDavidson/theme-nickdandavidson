@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
                                 body.addClass("overflow-hidden");
-                                colorStack.addClass("fixed-position");
+                                window.scrollTop(stackPosition);
+                                // colorStack.addClass("fixed-position");
 
                                 function watchWheel(e) {
                                     let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                             body.removeClass("overflow-hidden");
                                             window.removeEventListener("wheel", watchWheel);
                                             $(window).off("keydown");
-                                            colorStack.removeClass("fixed-position");
+                                            // colorStack.removeClass("fixed-position");
                                             $(window).scrollTop(stackPosition - 50);
                                         }
                                         if (delta < 0 && currentColor !== lastColor) {
