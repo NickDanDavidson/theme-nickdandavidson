@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             let scrollPos = window.scrollY;
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
+                                colorStack.addClass("fixed-position");
                                 body.addClass("overflow-hidden");
                                 $(window).scrollTop(stackPosition);
-                                // colorStack.addClass("fixed-position");
 
                                 function watchWheel(e) {
                                     let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
@@ -56,18 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                         if (delta > 0 && currentColor == firstColor) {
                                             // Swipe back to hero
+                                            colorStack.removeClass("fixed-position");
                                             body.removeClass("overflow-hidden");
                                             window.removeEventListener("wheel", watchWheel);
                                             $(window).off("keydown");
-                                            // colorStack.removeClass("fixed-position");
                                             $(window).scrollTop(stackPosition - 50);
-                                        }
-                                        if (delta < 0 && currentColor !== lastColor) {
+                                        } else if (delta < 0 && currentColor !== lastColor) {
                                             // Swipe to next color
                                             $(".current-color").removeClass("current-color").addClass("color-before");
                                             $(".color-before").last().next().addClass("current-color");
-                                        }
-                                        if (delta > 0) {
+                                        } else if (delta > 0) {
                                             // Swipe to previous color
                                             $(".current-color").prev().removeClass("color-before").addClass("current-color");
                                             $(".current-color").first().next().removeClass("current-color");
@@ -87,18 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                                     if (e.which === 38 && currentColor == firstColor) {
                                         // Swipe back to hero
+                                        colorStack.removeClass("fixed-position");
                                         body.removeClass("overflow-hidden");
                                         window.removeEventListener("wheel", watchWheel);
                                         $(window).off("keydown");
-                                        colorStack.removeClass("fixed-position");
                                         $(window).scrollTop(stackPosition - 50);
-                                    }
-                                    if (e.which === 40 && currentColor !== lastColor) {
+                                    } else if (e.which === 40 && currentColor !== lastColor) {
                                         // Swipe to next color
                                         $(".current-color").removeClass("current-color").addClass("color-before");
                                         $(".color-before").last().next().addClass("current-color");
-                                    }
-                                    if (e.which === 38) {
+                                    } else if (e.which === 38) {
                                         // Swipe to previous color
                                         $(".current-color").prev().removeClass("color-before").addClass("current-color");
                                         $(".current-color").first().next().removeClass("current-color");
