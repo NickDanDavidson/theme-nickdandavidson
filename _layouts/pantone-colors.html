@@ -29,6 +29,7 @@ permalink: /pantone-colors
         {% capture double_count %}{{ 0 }}{% endcapture %}
 
         {% if is_double_color_year %}
+            <h1>YES!!!</h1>
             {% if double_count == 0 %}
                 <article class="pantone__color {% if loop_index == '0' %}current-color{% endif %} swipe-{{ loop_index | modulo: 4 }}" style="z-index: {{ z_index }};">
                     <div class="container">
@@ -43,6 +44,7 @@ permalink: /pantone-colors
 
             {% capture double_count %}{{ 1 }}{% endcapture %}
         {% else %}
+            <h1>NO!!!</h1>
             {% include single-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description index=loop_index layer=z_index %}
 
             {% capture double_count %}{{ 0 }}{% endcapture %}
