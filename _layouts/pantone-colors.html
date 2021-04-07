@@ -28,7 +28,7 @@ permalink: /pantone-colors
         {% capture z_index %}{{ num_colors | minus: forloop.index0 }}{% endcapture %}
         {% capture double_count %}{{ 0 }}{% endcapture %}
 
-        {% if is_double_color_year %}
+        {% if is_double_color_year == true %}
             <h1>YES!!!</h1>
             {% if double_count == 0 %}
                 <article class="pantone__color {% if loop_index == '0' %}current-color{% endif %} swipe-{{ loop_index | modulo: 4 }}" style="z-index: {{ z_index }};">
