@@ -38,6 +38,58 @@ document.addEventListener('DOMContentLoaded', function() {
                     let _scrollTimeout = null,
                         userIsWheeling = false;
 
+                    function swipeOffStack() {
+                        colorStack.removeClass("fixed-position");
+                        body.removeClass("overflow-hidden");
+                        window.removeEventListener("wheel", watchWheel);
+                        $(window).off("keydown");
+                        $(window).scrollTop(stackPosition - 50);
+                    }
+
+                    function swipeNext() {
+                        $(".current-color").removeClass("current-color").addClass("color-before");
+                        $(".color-before").last().next().addClass("current-color");
+                    }
+
+                    function swipePrev() {
+                        $(".current-color").prev().removeClass("color-before").addClass("current-color");
+                        $(".current-color").first().next().removeClass("current-color");
+                    }
+
+                    function watchWheel(e) {
+                        let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
+
+                        if (!userIsWheeling) {
+                            userIsWheeling = true;
+                            let currentColor = $(".current-color").find("h1").text();
+
+                            if (delta > 0 && currentColor == firstColor) {
+                                swipeOffStack();
+                            } else if (delta < 0 && currentColor !== lastColor) {
+                                swipeNext();
+                            } else if (delta > 0) {
+                                swipePrev();
+                            }
+                        }
+
+                        clearTimeout(_scrollTimeout);
+                        _scrollTimeout = setTimeout(function setWheelingStatus() {
+                            userIsWheeling = false;
+                        }, 66);
+                    };
+
+                    function watchArrows(e) {
+                        let currentColor = $(".current-color").find("h1").text();
+
+                        if (e.which === 38 && currentColor == firstColor) {
+                            swipeOffStack();
+                        } else if (e.which === 40 && currentColor !== lastColor) {
+                            swipeNext();
+                        } else if (e.which === 38) {
+                            swipePrev();
+                        }
+                    }
+
                     function handleColorStack() {
                         $(window).on("scroll", function watchScroll() {
                             let scrollPos = window.scrollY;
@@ -47,59 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 body.addClass("overflow-hidden");
                                 $(window).scrollTop(stackPosition);
 
-                                function watchWheel(e) {
-                                    let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
-
-                                    if (!userIsWheeling) {
-                                        userIsWheeling = true;
-                                        let currentColor = $(".current-color").find("h1").text();
-
-                                        if (delta > 0 && currentColor == firstColor) {
-                                            // Swipe back to hero
-                                            colorStack.removeClass("fixed-position");
-                                            body.removeClass("overflow-hidden");
-                                            window.removeEventListener("wheel", watchWheel);
-                                            $(window).off("keydown");
-                                            $(window).scrollTop(stackPosition - 50);
-                                        } else if (delta < 0 && currentColor !== lastColor) {
-                                            // Swipe to next color
-                                            $(".current-color").removeClass("current-color").addClass("color-before");
-                                            $(".color-before").last().next().addClass("current-color");
-                                        } else if (delta > 0) {
-                                            // Swipe to previous color
-                                            $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                            $(".current-color").first().next().removeClass("current-color");
-                                        }
-                                    }
-
-                                    clearTimeout(_scrollTimeout);
-                                    _scrollTimeout = setTimeout(function setWheelingStatus() {
-                                        userIsWheeling = false;
-                                    }, 66);
-                                };
-
                                 window.addEventListener("wheel", watchWheel);
-
-                                $(window).on("keydown", function watchArrows(e) {
-                                    let currentColor = $(".current-color").find("h1").text();
-
-                                    if (e.which === 38 && currentColor == firstColor) {
-                                        // Swipe back to hero
-                                        colorStack.removeClass("fixed-position");
-                                        body.removeClass("overflow-hidden");
-                                        window.removeEventListener("wheel", watchWheel);
-                                        $(window).off("keydown");
-                                        $(window).scrollTop(stackPosition - 50);
-                                    } else if (e.which === 40 && currentColor !== lastColor) {
-                                        // Swipe to next color
-                                        $(".current-color").removeClass("current-color").addClass("color-before");
-                                        $(".color-before").last().next().addClass("current-color");
-                                    } else if (e.which === 38) {
-                                        // Swipe to previous color
-                                        $(".current-color").prev().removeClass("color-before").addClass("current-color");
-                                        $(".current-color").first().next().removeClass("current-color");
-                                    }
-                                });
+                                $(window).on("keydown", watchArrows);
                             }
                         });
                     }
