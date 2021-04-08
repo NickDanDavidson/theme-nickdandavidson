@@ -26,7 +26,7 @@ permalink: /pantone-colors
 
         {% capture loop_index %}{{ forloop.index0 }}{% endcapture %}
         {% capture z_index %}{{ num_colors | minus: forloop.index0 }}{% endcapture %}
-        {% capture double_count %}0{% endcapture %}
+        {% assign double_count = 0 %}
 
         {% if is_double_color_year == "true" %}
             {% if double_count == 0 %}
@@ -34,18 +34,16 @@ permalink: /pantone-colors
                     <div class="container">
                         <div class="row pt-5">
                             {% include double-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description %}
+                {% assign double_count = 1 %}
             {% else %}
                             {% include double-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description %}
                         </div>
                     </div>
                 </article>
+                {% assign double_count = 0 %}
             {% endif %}
-
-            {% capture double_count %}{{ 1 }}{% endcapture %}
         {% else %}
             {% include single-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description index=loop_index layer=z_index %}
-
-            {% capture double_count %}{{ 0 }}{% endcapture %}
         {% endif %}
     {% endfor %}
 </section>
