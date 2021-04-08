@@ -75,7 +75,8 @@ footer {
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        button {
+        width: auto;
+        &--button {
             cursor: pointer;
         }
     }
