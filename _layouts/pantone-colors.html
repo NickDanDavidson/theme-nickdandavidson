@@ -26,7 +26,7 @@ permalink: /pantone-colors
 
         {% capture loop_index %}{{ forloop.index0 }}{% endcapture %}
         {% capture z_index %}{{ num_colors | minus: forloop.index0 }}{% endcapture %}
-        {% capture double_count %}{{ 0 }}{% endcapture %}
+        {% capture double_count %}0{% endcapture %}
 
         {% if is_double_color_year == "true" %}
             {% if double_count == 0 %}
