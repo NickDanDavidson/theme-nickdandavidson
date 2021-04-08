@@ -32,4 +32,11 @@ hr {
 ::selection, mark {
     background-color: $black;
     color: $white;
+    .bg-dark-true & {
+        background-color: $white;
+        color: $black;
+    }
+}
+.bg-dark-true {
+    color: $white;
 }
