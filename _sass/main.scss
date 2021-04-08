@@ -33,7 +33,10 @@ main, footer {
     flex-shrink: 0;
 }
 footer {
-    background-color: $beige;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
 }
 .pantone {
     &__hero, &__color {
@@ -42,14 +45,7 @@ footer {
     &__stack {
         position: relative;
         height: 100vh;
-        &.fixed-position {
-            // position: fixed;
-            // top: 0;
-            // left: 0;
-        }
-    }
-    &__spacer {
-        height: 100vh;
+        &.fixed-position {}
     }
     &__color {
         position: absolute;
@@ -72,6 +68,15 @@ footer {
                     transform: translateX(105%) translateY(-105%);
                 }
             }
+        }
+    }
+    &__buttons {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        button {
+            cursor: pointer;
         }
     }
 }
