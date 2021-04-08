@@ -63,13 +63,13 @@ footer {
         &.color-before {
             &.swipe {
                 &-0 {
-                    transform: translateX(-100%) translateY(-100%);
+                    transform: translateX(-105%) translateY(-105%);
                 }
                 &-1, &-3 {
-                    transform: translateY(-100%);
+                    transform: translateY(-105%);
                 }
                 &-2 {
-                    transform: translateX(100%) translateY(-100%);
+                    transform: translateX(105%) translateY(-105%);
                 }
             }
         }
