@@ -22,6 +22,7 @@ permalink: /pantone-colors
     {% for color in site.data.pantone_colors.colors %}
         {% capture color_title %}{{ color.title }}{% endcapture %}
         {% capture color_hex %}{{ color.hex_code }}{% endcapture %}
+        {% capture is_dark_color %}{{ color.is_dark }}{% endcapture %}
         {% capture color_year %}{{ color.year }}{% endcapture %}
         {% capture is_double_color_year %}{{ color.is_double }}{% endcapture %}
         {% capture color_description %}{{ color.description }}{% endcapture %}
@@ -34,17 +35,17 @@ permalink: /pantone-colors
                 <article class="pantone__color {% if loop_index == '0' %}current-color{% endif %} swipe-{{ loop_index | modulo: 4 }}" style="z-index: {{ z_index }};">
                     <div class="container-fluid h-100 px-0">
                         <div class="row h-100">
-                            {% include double-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description %}
+                            {% include double-pantone-color.html title=color_title hex=color_hex darkness=is_dark_color year=color_year description=color_description %}
                 {% assign double_count = 1 %}
             {% else %}
-                            {% include double-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description %}
+                            {% include double-pantone-color.html title=color_title hex=color_hex darkness=is_dark_color year=color_year description=color_description %}
                         </div>
                     </div>
                 </article>
                 {% assign double_count = 0 %}
             {% endif %}
         {% else %}
-            {% include single-pantone-color.html title=color_title hex=color_hex year=color_year description=color_description index=loop_index layer=z_index %}
+            {% include single-pantone-color.html title=color_title hex=color_hex darkness=is_dark_color year=color_year description=color_description index=loop_index layer=z_index %}
         {% endif %}
     {% endfor %}
 </section>
