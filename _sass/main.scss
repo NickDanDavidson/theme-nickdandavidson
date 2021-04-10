@@ -39,7 +39,10 @@ footer {
     z-index: 50;
 }
 .pantone {
-    &__hero, &__color {
+    &__hero {
+        height: 95vh;
+    }
+    &__color {
         height: 100vh;
     }
     &__stack {
@@ -74,7 +77,7 @@ footer {
         position: fixed;
         bottom: 1.5rem;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(50%);
         width: auto;
         z-index: 50;
         &--button {
