@@ -40,7 +40,7 @@ footer {
 }
 .pantone {
     &__hero {
-        height: 95vh;
+        height: calc(100vh - 3rem);
     }
     &__color {
         height: 100vh;
