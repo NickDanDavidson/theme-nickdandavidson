@@ -34,7 +34,7 @@ permalink: /pantone-colors
             {% if double_count == 0 %}
                 <article class="pantone__color {% if loop_index == '0' %}current-color{% endif %} swipe-{{ loop_index | modulo: 4 }}" style="z-index: {{ z_index }};">
                     <div class="container-fluid h-100 px-0">
-                        <div class="row h-100">
+                        <div class="row h-100 mx-0">
                             {% include double-pantone-color.html title=color_title hex=color_hex darkness=is_dark_color year=color_year description=color_description %}
                 {% assign double_count = 1 %}
             {% else %}
