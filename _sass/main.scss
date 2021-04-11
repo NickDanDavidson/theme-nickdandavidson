@@ -81,6 +81,7 @@ footer {
         width: auto;
         z-index: 50;
         &--button {
+            font-size: 0.875rem;
             pointer-events: none;
             opacity: 0;
             transition: 0.2s;

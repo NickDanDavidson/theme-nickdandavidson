@@ -66,9 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         $(".current-color").removeClass("current-color").addClass("color-before");
                         $(".color-before").last().next().addClass("current-color");
 
-                        if ($(".current-color").index() > 0 && !backButton.hasClass("active")) {
+                        let currentIndex = $(".current-color").index();
+
+                        if (currentIndex > 0 && !backButton.hasClass("active")) {
                             backButton.addClass("active");
                             topButton.addClass("active");
+                        }
+                        if (currentIndex == $(".pantoneColors").last().index()) {
+                            nextButton.removeClass("active");
+                            bottomButton.removeClass("active");
                         }
                     }
 
@@ -76,9 +82,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         $(".current-color").prev().removeClass("color-before").addClass("current-color");
                         $(".current-color").first().next().removeClass("current-color");
 
-                        if ($(".current-color").index() == 0 && backButton.hasClass("active")) {
+                        let currentIndex = $(".current-color").index();
+
+                        if (currentIndex == 0 && backButton.hasClass("active")) {
                             backButton.removeClass("active");
                             topButton.removeClass("active");
+                        }
+                        if (currentIndex < $(".pantoneColors").last().index() && !nextButton.hasClass("active")) {
+                            nextButton.addClass("active");
+                            bottomButton.addClass("active");
                         }
                     }
 
