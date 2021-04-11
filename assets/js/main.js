@@ -47,28 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.removeEventListener("wheel", watchWheel);
                         $(window).off("keydown");
                         $(window).scrollTop(stackPosition - 50);
+                        $(".pantone__buttons--button").removeClass("active");
                     }
 
                     function swipeNext() {
                         $(".current-color").removeClass("current-color").addClass("color-before");
                         $(".color-before").last().next().addClass("current-color");
+
+                        if ($(".current-color").index() > 0 && !backButton.hasClass("active")) {
+                            backButton.addClass("active");
+                            topButton.addClass("active");
+                        }
                     }
 
                     function swipePrev() {
                         $(".current-color").prev().removeClass("color-before").addClass("current-color");
                         $(".current-color").first().next().removeClass("current-color");
-                    }
 
-                    nextButton.on("click", swipeNext);
-                    backButton.on("click", swipePrev);
-                    topButton.on("click", function() {
-                        let currColorCount = $(".current-color").index(),
-                            i;
-                        for (i = currColorCount; i >= 0; i--) {
-                            swipePrev();
+                        if ($(".current-color").index() == 0 && backButton.hasClass("active")) {
+                            backButton.removeClass("active");
+                            topButton.removeClass("active");
                         }
-                        swipeOffStack();
-                    });
+                    }
 
                     function watchWheel(e) {
                         let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
@@ -116,6 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                 window.addEventListener("wheel", watchWheel);
                                 $(window).on("keydown", watchArrows);
                             }
+                        });
+
+                        nextButton.on("click", swipeNext);
+                        backButton.on("click", swipePrev);
+                        topButton.on("click", function() {
+                            let currColorCount = $(".current-color").index(),
+                                i;
+                            for (i = currColorCount; i >= 0; i--) {
+                                swipePrev();
+                            }
+                            swipeOffStack();
                         });
                     }
 

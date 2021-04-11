@@ -81,7 +81,14 @@ footer {
         width: auto;
         z-index: 50;
         &--button {
-            cursor: pointer;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.2s;
+            &.active {
+                cursor: pointer;
+                pointer-events: all;
+                opacity: 1;
+            }
         }
     }
 }
