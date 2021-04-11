@@ -41,6 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     let _scrollTimeout = null,
                         userIsWheeling = false;
 
+                    function swipeOnStack() {
+                        colorStack.addClass("fixed-position");
+                        body.addClass("overflow-hidden");
+                        $(window).scrollTop(stackPosition);
+                        nextButton.addClass("active");
+
+                        window.addEventListener("wheel", watchWheel);
+                        $(window).on("keydown", watchArrows);
+                    }
+
                     function swipeOffStack() {
                         colorStack.removeClass("fixed-position");
                         body.removeClass("overflow-hidden");
@@ -109,12 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             let scrollPos = window.scrollY;
 
                             if (scrollPos >= stackPosition && !colorStack.hasClass("fixed-position")) {
-                                colorStack.addClass("fixed-position");
-                                body.addClass("overflow-hidden");
-                                $(window).scrollTop(stackPosition);
-
-                                window.addEventListener("wheel", watchWheel);
-                                $(window).on("keydown", watchArrows);
+                                swipeOnStack();
                             }
                         });
 
