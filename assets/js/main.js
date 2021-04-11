@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
                           stackPosition = colorStack.offset().top,
                           pantoneColors = $(".pantone__color"),
                           firstColor = pantoneColors.first().find("h1").text(),
-                          lastColor = pantoneColors.last().find("h1").text();
+                          lastColor = pantoneColors.last().find("h1").text(),
+                          nextButton = $(".pantone__buttons--button.next-color"),
+                          backButton = $(".pantone__buttons--button.prev-color"),
+                          topButton = $(".pantone__buttons--button.back-to-top");
 
                     let _scrollTimeout = null,
                         userIsWheeling = false;
@@ -55,6 +58,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         $(".current-color").prev().removeClass("color-before").addClass("current-color");
                         $(".current-color").first().next().removeClass("current-color");
                     }
+
+                    nextButton.on("click", swipeNext());
+                    backButton.on("click", swipePrev());
+                    topButton.on("click", function() {
+                        let currColorCount = $(".current-color").index();
+                        for (i = currColorCount; i >= 0; i--) {
+                            swipePrev();
+                        }
+                        swipeOffStack();
+                    });
 
                     function watchWheel(e) {
                         let delta = ((typeof e.wheelDelta != "undefined") ? (-e.deltaY) : e.detail);
