@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     backButton.on("click", swipePrev());
                     topButton.on("click", function() {
                         let currColorCount = $(".current-color").index();
-                        for (i = currColorCount; i >= 0; i--) {
+                        for (let i = currColorCount; i >= 0; i--) {
                             swipePrev();
                         }
                         swipeOffStack();
