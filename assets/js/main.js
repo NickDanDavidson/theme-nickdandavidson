@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         $(".current-color").first().next().removeClass("current-color");
                     }
 
-                    nextButton.on("click", swipeNext());
-                    backButton.on("click", swipePrev());
+                    nextButton.on("click", swipeNext);
+                    backButton.on("click", swipePrev);
                     topButton.on("click", function() {
                         let currColorCount = $(".current-color").index(),
                             i;
