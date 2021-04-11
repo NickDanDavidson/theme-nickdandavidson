@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
                           lastColor = pantoneColors.last().find("h1").text(),
                           nextButton = $(".pantone__buttons--button.next-color"),
                           backButton = $(".pantone__buttons--button.prev-color"),
-                          topButton = $(".pantone__buttons--button.back-to-top");
+                          topButton = $(".pantone__buttons--button.back-to-top"),
+                          bottomButton = $(".pantone__buttons--button.go-to-bottom");
 
                     let _scrollTimeout = null,
                         userIsWheeling = false;
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         body.addClass("overflow-hidden");
                         $(window).scrollTop(stackPosition);
                         nextButton.addClass("active");
+                        bottomButton.addClass("active");
 
                         window.addEventListener("wheel", watchWheel);
                         $(window).on("keydown", watchArrows);
@@ -132,6 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                 swipePrev();
                             }
                             swipeOffStack();
+                        });
+                        bottomButton.on("click", function() {
+                            let numColors = pantoneColors.last().index(),
+                                thisColor = $(".current-color").index(),
+                                j;
+
+                            for (j = 0; j < numColors - thisColor; j++) {
+                                swipeNext();
+                            }
                         });
                     }
 
