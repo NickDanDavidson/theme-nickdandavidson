@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             backButton.addClass("active");
                             topButton.addClass("active");
                         }
-                        if (currentIndex == $(".pantoneColors").last().index()) {
+                        if (currentIndex == $(".pantoneColors").last().index() - 1) {
                             nextButton.removeClass("active");
                             bottomButton.removeClass("active");
                         }
@@ -155,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             for (j = 0; j < numColors - thisColor; j++) {
                                 swipeNext();
                             }
+                            nextButton.removeClass("active");
+                            bottomButton.removeClass("active");
                         });
                     }
 
