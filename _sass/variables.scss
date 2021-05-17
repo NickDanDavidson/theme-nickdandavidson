@@ -9,26 +9,50 @@
     src: url('/assets/fonts/HK Grotesk/HKGrotesk-Black.otf') format('opentype');
     font-display: swap;
 }
+// @font-face {
+//     font-family: 'HK-grotesk-italic';
+//     src: url('/assets/fonts/HK Grotesk/HKGrotesk-Italic.otf') format('opentype');
+//     font-display: swap;
+// }
 @font-face {
-    font-family: 'HK-grotesk-italic';
-    src: url('/assets/fonts/HK Grotesk/HKGrotesk-Italic.otf') format('opentype');
+    font-family: 'Cooper-Hewitt';
+    src: url('/assets/fonts/Cooper Hewitt/CooperHewitt-Book.otf') format('opentype');
     font-display: swap;
 }
 @font-face {
-    font-family: 'sorts-mill-goudy';
-    src: url('/assets/fonts/Sorts Mill Goudy/SortsMillGoudy-Regular.ttf') format('truetype');
+    font-family: 'Wremena';
+    src: url('/assets/fonts/Wremena/Wremena Regular.otf') format('opentype');
     font-display: swap;
 }
 @font-face {
-    font-family: 'sorts-mill-goudy-italic';
-    src: url('/assets/fonts/Sorts Mill Goudy/SortsMillGoudy-Italic.ttf') format('truetype');
+    font-family: 'Metropolis';
+    src: url('/assets/fonts/Metropolis/Metropolis-Regular.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Metropolis-black';
+    src: url('/assets/fonts/Metropolis/Metropolis-Black.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Young-Serif';
+    src: url('/assets/fonts/YoungSerif/YoungSerif-Regular.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Glacial-Indifference';
+    src: url('/assets/fonts/Glacial Indifference/GlacialIndifference-Regular.otf') format('opentype');
     font-display: swap;
 }
 
-$font-header: 'HK-grotesk-black', sans-serif;
-$font-body-sans: 'HK-grotesk', sans-serif;
-$font-body-serif: 'sorts-mill-goudy', serif;
-$font-bold: 'HK-grotesk-black', sans-serif;
+// $font-header: 'HK-grotesk-black', sans-serif;
+$font-header: 'Metropolis-black', sans-serif;
+// $font-body-sans: 'HK-grotesk', sans-serif;
+$font-body-sans: 'Metropolis', sans-serif;
+// $font-body-serif: 'sorts-mill-goudy', serif;
+$font-body-serif: 'Wremena', serif;
+// $font-bold: 'HK-grotesk-black', sans-serif;
+$font-bold: 'Metropolis-black', sans-serif;
 $font-italic: 'HK-grotesk-italic', sans-serif;
 
 // Colors
