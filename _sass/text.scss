@@ -6,6 +6,9 @@ h1, h2, h3, h4, h5, h6 {
 h1.display {
     font-size: 4rem;
 }
+h1 {
+    font-size: 3rem;
+}
 p {
     font-family: $font-body-serif;
     line-height: 1.5;
@@ -15,6 +18,9 @@ p {
 }
 .font-sans {
     font-family: $font-body-sans;
+}
+.font-header-thin {
+    font-family: $font-header-thin;
 }
 strong {
     font-family: $font-bold;

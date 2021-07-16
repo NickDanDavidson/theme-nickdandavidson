@@ -1,7 +1,12 @@
 // Fonts
 @font-face {
-    font-family: 'Concourse';
+    font-family: 'Concourse4';
     src: url('/assets/fonts/Concourse/Concourse OT 4 Medium.otf') format('opentype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Concourse3';
+    src: url('/assets/fonts/Concourse/Concourse OT 3 Book.otf') format('opentype');
     font-display: swap;
 }
 @font-face {
@@ -25,7 +30,8 @@
     font-display: swap;
 }
 
-$font-header: 'Concourse', 'HKGroteskBlack', sans-serif;
+$font-header: 'Concourse4', 'HKGroteskBlack', sans-serif;
+$font-header-thin: 'Concourse3', sans-serif;
 $font-body-sans: 'Concourse', 'HKGrotesk', sans-serif;
 $font-body-serif: 'Equity', serif;
 $font-bold: 'Concourse', 'HK-grotesk-black', sans-serif;
