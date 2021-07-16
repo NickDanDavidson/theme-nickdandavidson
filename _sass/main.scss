@@ -9,8 +9,8 @@ body {
     align-items: stretch;
     background-color: $beige;
     color: $black;
-    font-family: $font-body-sans;
-    font-size: 1.25rem;
+    font-family: $font-body-serif;
+    font-size: 1.375rem;
     &.overflow-hidden {
         overflow: hidden;
     }
@@ -81,7 +81,7 @@ footer {
         width: auto;
         z-index: 50;
         &--button {
-            font-size: 0.875rem;
+            font-size: 1rem;
             pointer-events: none;
             opacity: 0;
             transition: 0.2s;
