@@ -1,7 +1,7 @@
 <article class="pantone__color {% if include.index == '0' %}current-color{% endif %} swipe-{{ include.index | modulo: 4 }} bg-dark-{{ include.darkness }}" style="background-color: {{ include.hex }}; z-index: {{ include.layer }};">
     <div class="container">
         <div class="row pt-5">
-            <div class="pantone__color--description col-12 col-md-8 offset-md-2 pt-5 mt-5">
+            <div class="pantone__color--description col-12 col-md-8 offset-md-2 p-5 mt-5 bg-beige">
                 <h1 class="mb-4">
                     <span class="h2 font-header-thin">{{ include.year }}</span>
                     &nbsp;{{ include.title }}
